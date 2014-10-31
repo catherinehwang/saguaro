@@ -11,24 +11,29 @@ doc = Nokogiri::HTML(open(nutritional_page))
 
 rows = doc.css("#nutrInfo").css("tbody").css("tr")
 
-food = rows.select do |item|
+food_rows = rows.select do |item|
   item.attribute("class") == nil
 end
 
-food.each do |item|
-  name = item.css("th").text
+food_rows.each do |item|
+  food = Food.new()
+
+  food.name = item.css("th").text
   info = item.css("td")
 
-  serving_size = info[0].text
-  calories = info[1].text
-  calories_from_fat = info[2].text
-  saturated_fat = info[3].text
-  total_fat = info[4].text
-  trans_fat = info[5].text
-  cholesterol = info[6].text
-  sodium = info[7].text
-  carbohydrates = info[8].text
-  dietary_fiber = info[9].text
-  sugars = info[10].text
-  protein = info[11].text
+  food.serving_size = info[0].text
+  food.calories = info[1].text
+  food.calories_from_fat = info[2].text
+  food.saturated_fat = info[3].text
+  food.total_fat = info[4].text
+  food.trans_fat = info[5].text
+  food.cholesterol = info[6].text
+  food.sodium = info[7].text
+  food.carbohydrates = info[8].text
+  food.dietary_fiber = info[9].text
+  food.sugars = info[10].text
+  food.protein = info[11].text
+
+  food.save
+
 end
