@@ -17,6 +17,7 @@
 
 # Ignore emacs 
 *~
+\#*#
 
 # Ignore vim
 *.swp
