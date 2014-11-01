@@ -4,5 +4,5 @@
 
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
-    console.log(data)
-    console.log(xhr.responseText))
+    $("#foodResult").append(data))
+
