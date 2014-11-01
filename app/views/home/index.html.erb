@@ -1,2 +1,7 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<b>Index</b>
+
+<%= form_tag("/food", remote: true) do %>
+<%= label_tag :money %><br>
+<%= text_field_tag :money %>
+<%= submit_tag "Give me some Taco Bell" %>
+<% end %>
