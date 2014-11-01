@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141031071205) do
     t.integer  "dietary_fiber"
     t.integer  "sugars"
     t.integer  "protein"
+    t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

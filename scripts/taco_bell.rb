@@ -33,6 +33,7 @@ food_rows.each do |item|
   food.dietary_fiber = info[9].text
   food.sugars = info[10].text
   food.protein = info[11].text
+  food.source = "Taco Bell"
 
   food.save
 
