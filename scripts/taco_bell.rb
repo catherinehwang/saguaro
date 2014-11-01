@@ -18,7 +18,7 @@ end
 food_rows.each do |item|
   food = Food.new()
 
-  food.name = item.css("th").text
+  food.name = item.css("th").text.gsub(/[^0-9a-z -]/i).strip
   info = item.css("td")
 
   food.serving_size = info[0].text
