@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141031071205) do
     t.integer  "sugars"
     t.integer  "protein"
     t.string   "source"
+    t.integer  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

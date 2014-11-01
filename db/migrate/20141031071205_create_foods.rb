@@ -15,6 +15,7 @@ class CreateFoods < ActiveRecord::Migration
       t.integer :sugars
       t.integer :protein
       t.string :source
+      t.integer :price
 
       t.timestamps
     end
