@@ -1,6 +1,6 @@
 <b>Index</b>
 
-<%= form_tag("/food", remote: true) do %>
+<%= form_tag("/food", id: "foodForm", remote: true) do %>
   <%= label_tag :money %><br>
   <%= text_field_tag :money %>
   <%= submit_tag "Give me some Taco Bell" %>

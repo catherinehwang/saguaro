@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
-  get 'food' => 'food#index'
+  post 'food' => 'food#index'
 
   root 'home#index'
 
