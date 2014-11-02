@@ -11,6 +11,8 @@ food_rows = rows.select do |item|
   item.children.count == 3
 end
 
+non_matches = File.new("log/no_prices.log", "w")
+
 food_rows.each do |item|
   name = item.css(".column-1").text
 
@@ -18,6 +20,7 @@ food_rows.each do |item|
 
   if !food
     puts "Couldn't find food: #{name}"
+    non_matches.write("#{name}\n")
     next
   end
 
