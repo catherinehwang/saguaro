@@ -15,16 +15,29 @@ non_matches = File.new("log/no_prices.log", "w")
 
 food_rows.each do |item|
   name = item.css(".column-1").text
+  special_size = item.css(".column-2").text
 
   food = Food.find_by(:name => name)
 
   if !food
-    puts "Couldn't find food: #{name}"
-    non_matches.write("#{name}\n")
-    next
+    # Price is "Cheesy Burrito (Bacon) but name is Cheesy Burrito - Bacon"
+    regex = /\(([^)]*)\)/
+    if match = regex.match(name)
+      stripped_name = name.gsub(regex, "").strip
+      new_name = "#{stripped_name} - #{match[1]}"
+      food = Food.find_by(:name => new_name)
+      if !food
+        puts "Couldn't find food: #{name}"
+        non_matches.write("#{name}\n")
+        next
+      end
+    else
+      puts "Couldn't find food: #{name}"
+      non_matches.write("#{name}\n")
+      next
+    end
   end
 
-  special_size = item.css(".column-2").text
   food.price = item.css(".column-3").text.gsub(/\D/,'').to_i
   food.save
 end
