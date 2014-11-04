@@ -16,9 +16,10 @@ food_rows = rows.select do |item|
 end
 
 food_rows.each do |item|
-  food = Food.new()
 
-  food.name = item.css("th").text.gsub(/[^0-9a-z -]/i, "").strip
+  name = item.css("th").text.gsub(/[^0-9a-z -]/i, "").strip
+
+  food = Food.find_or_create_by(:name => name)
   info = item.css("td")
 
   food.serving_size = info[0].text
