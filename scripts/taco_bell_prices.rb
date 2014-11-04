@@ -26,16 +26,13 @@ food_rows.each do |item|
       stripped_name = name.gsub(regex, "").strip
       new_name = "#{stripped_name} - #{match[1]}"
       food = Food.find_by(:name => new_name)
-      if !food
-        puts "Couldn't find food: #{name}"
-        non_matches.write("#{name}\n")
-        next
-      end
-    else
-      puts "Couldn't find food: #{name}"
-      non_matches.write("#{name}\n")
-      next
     end
+  end
+
+  if !food
+    puts "Couldn't find food: #{name}"
+    non_matches.write("#{name}\n")
+    next
   end
 
   food.price = item.css(".column-3").text.gsub(/\D/,'').to_i
