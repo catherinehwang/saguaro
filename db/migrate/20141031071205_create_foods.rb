@@ -19,5 +19,7 @@ class CreateFoods < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :foods, :name, :unique => true
   end
 end

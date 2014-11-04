@@ -33,4 +33,6 @@ ActiveRecord::Schema.define(version: 20141031071205) do
     t.datetime "updated_at"
   end
 
+  add_index "foods", ["name"], name: "index_foods_on_name", unique: true
+
 end
