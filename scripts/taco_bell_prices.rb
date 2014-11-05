@@ -26,6 +26,12 @@ food_rows.each do |item|
       stripped_name = name.gsub(regex, "").strip
       new_name = "#{stripped_name} - #{match[1]}"
       food = Food.find_by(:name => new_name)
+
+      # Price is "Cheesy Burrito (Bacon) but name is Bacon Cheesy Burrito"
+      if !food
+        new_name = "#{match[1]} #{stripped_name}"
+        food = Food.find_by(:name => new_name)
+      end
     end
   end
 
