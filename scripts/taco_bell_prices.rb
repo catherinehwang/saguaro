@@ -30,8 +30,9 @@ food_rows.each do |item|
   end
 
   if !food
-    puts "Couldn't find food: #{name}"
-    non_matches.write("#{name}\n")
+    lacking = "#{name} | #{special_size}"
+    puts "Couldn't find food: #{lacking}"
+    non_matches.write("#{lacking}\n")
     next
   end
 
