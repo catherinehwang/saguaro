@@ -14,7 +14,7 @@ end
 non_matches = File.new("log/no_prices.log", "w")
 
 food_rows.each do |item|
-  name = item.css(".column-1").text
+  name = item.css(".column-1").text.gsub(".","")
   special_size = item.css(".column-2").text
 
   food = Food.find_by(:name => name)
