@@ -1,13 +1,13 @@
 <div class="home">
-    <%= image_tag("tacobell.jpg", class: "cover" )%>
-
     <%= form_tag("/food", id: "foodForm", remote: true) do %>
-      <%= label_tag :money %><br>
-      <%= text_field_tag :money %>
-      <%= submit_tag "Give me some Taco Bell" %>
+        <%= label_tag :money %><br>
+        <%= text_field_tag :money %>
+        <%= submit_tag "Give me some Taco Bell" %>
     <% end %>
 
     <div id="foodResult">
-      <h1>Result</h1>
+        <h1>Result</h1>
+    </div>
+    <div class="overlay">
     </div>
 </div>
