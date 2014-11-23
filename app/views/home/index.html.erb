@@ -3,7 +3,7 @@
         <%= form_tag("/food", id: "foodForm", remote: true) do %>
             <%= label_tag :money %><br>
             <%= text_field_tag :money %>
-            <%= submit_tag "Give me some Taco Bell" %>
+            <%= submit_tag("Give me some Taco Bell", class: "btn btn-primary")%>
         <% end %>
 
         <div id="foodResult">
