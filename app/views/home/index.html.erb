@@ -1,4 +1,6 @@
 <div class="home">
+    <%= image_tag("tacobell.jpg", class: "cover" )%>
+
     <%= form_tag("/food", id: "foodForm", remote: true) do %>
       <%= label_tag :money %><br>
       <%= text_field_tag :money %>
