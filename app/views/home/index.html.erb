@@ -1,13 +1,13 @@
 <div class="home">
-    <%= form_tag("/food", id: "foodForm", remote: true) do %>
-        <%= label_tag :money %><br>
-        <%= text_field_tag :money %>
-        <%= submit_tag "Give me some Taco Bell" %>
-    <% end %>
+    <div class="content">
+        <%= form_tag("/food", id: "foodForm", remote: true) do %>
+            <%= label_tag :money %><br>
+            <%= text_field_tag :money %>
+            <%= submit_tag "Give me some Taco Bell" %>
+        <% end %>
 
-    <div id="foodResult">
-        <h1>Result</h1>
-    </div>
-    <div class="overlay">
+        <div id="foodResult">
+            <h1>Result</h1>
+        </div>
     </div>
 </div>

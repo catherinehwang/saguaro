@@ -5,5 +5,22 @@
 .home {
     background: url(image_path("tacobell.jpg")) no-repeat fixed;
     background-size: cover;
+    background-repeat: no-repeat;
     height:100vh;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.4)
+    }
+
+    .content {
+        z-index: 10;
+    }
 }
