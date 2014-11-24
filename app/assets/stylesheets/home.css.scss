@@ -7,6 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     height:100vh;
+    width: 100%;
+    display: table;
 
     &:before {
         content: "";
@@ -21,6 +23,7 @@
     }
 
     .content {
+        display: table-cell;
         position: relative;
         z-index: 10;
 
