@@ -1,12 +1,14 @@
 <div class="home">
-    <div class="content">
-        <%= form_tag("/food", id: "foodForm", remote: true) do %>
-            <%= text_field_tag("money", nil, class: "form-control", placeholder: "Enter the amount of money you have.", type: "number", step: "any", min: "0") %><br>
-            <%= submit_tag("Give me some Taco Bell", class: "btn btn-primary")%>
-        <% end %>
+    <div class="hero-unit">
+        <div class="content">
+            <%= form_tag("/food", id: "foodForm", remote: true) do %>
+                <%= text_field_tag("money", nil, class: "form-control", placeholder: "Enter the amount of money you have.", type: "number", step: "any", min: "0") %><br>
+                <%= submit_tag("Give me some Taco Bell", class: "btn btn-primary")%>
+            <% end %>
 
-        <div id="foodResult">
-            <h1>Result</h1>
         </div>
+    </div>
+
+    <div id="foodResult">
     </div>
 </div>
