@@ -3,7 +3,7 @@
         <div class="content">
             <%= form_tag("/food", id: "foodForm", remote: true) do %>
                 <%= text_field_tag("money", nil, class: "form-control", placeholder: "Enter the amount of money you have.", type: "number", step: "any", min: "0") %><br>
-                <%= select_tag("source", options_for_select([ "Taco Bell" ], "Taco Bell"), class: "form-control") %>
+                <%= select_tag("source", options_for_select(@sources)) %>
                 <%= submit_tag("Give me some Taco Bell", class: "btn btn-primary")%>
             <% end %>
 
