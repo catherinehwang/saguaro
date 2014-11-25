@@ -8,12 +8,18 @@ class FoodController < ApplicationController
     end
   end
 
-  def calculate_food(money)
-    # Assume Taco Bell for now
-    possible_food = Food.where(source: "Taco Bell")
+  def calculate_food
+    money = params[:money]
+    source = params[:source]
 
-    return possible_food.map do |food| 
+    possible_food = Food.where(source: source)
+
+    result = possible_food.map do |food|
       food.name
+    end
+
+    respond_to do |format|
+      format.json { render json: result, status: :ok }
     end
   end
 end
