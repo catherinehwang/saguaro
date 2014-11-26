@@ -29,6 +29,6 @@ class FoodController < ApplicationController
         end
       end
     end
-    return prev[money].name
+    return [prev[money].name]
   end
 end
