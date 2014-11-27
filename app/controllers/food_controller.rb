@@ -13,8 +13,9 @@ class FoodController < ApplicationController
   end
 
   def determine_ratios(food, money)
-    cache = Array.new(food.length + 1, 0)
+    cache = Array.new(money + 1, 0)
     prev = Array.new(cache.length)
+
     (1..money).each do |m|
       new_weight = 0
       food.each do |f|
