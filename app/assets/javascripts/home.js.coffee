@@ -6,7 +6,10 @@ $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
     console.log(data)
     calories = data.total_calories
-    food_quantities = data.food_quantities
-    $("#totalCalories").append(calories)
-    $("#foodList").append(JSON.stringify(food_quantities)))
+    foodQuantities = JSON.stringify(data.food_quantities)
 
+    source = $("#food-template").html()
+    template = Handlebars.compile(source)
+    context = { calories: calories, foodQuantities: foodQuantities }
+    html = template(context)
+    $("#foodResult").html(html))
