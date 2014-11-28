@@ -1,6 +1,6 @@
 class FoodController < ApplicationController
   def calculate_food
-    money = params[:money].to_i
+    money = (params[:money].to_f * 100).to_i
     source = params[:source]
 
     possible_food = Food.where(source: source).where.not(price: nil).where.not(calories: nil)
