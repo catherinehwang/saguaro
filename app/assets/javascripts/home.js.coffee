@@ -4,5 +4,9 @@
 
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
-    $("#foodResult").append(data))
+    console.log(data)
+    calories = data.total_calories
+    food_quantities = data.food_quantities
+    $("#totalCalories").append(calories)
+    $("#foodList").append(JSON.stringify(food_quantities)))
 

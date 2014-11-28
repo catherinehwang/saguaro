@@ -44,7 +44,7 @@ class FoodController < ApplicationController
 
     return {
       total_calories: cache[money],
-      food_quanitities: food_quantities
+      food_quantities: food_quantities
     }
   end
 end
