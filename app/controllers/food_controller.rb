@@ -30,6 +30,21 @@ class FoodController < ApplicationController
         end
       end
     end
-    return [prev[money].name]
+
+    food_quantities = Hash.new(0)
+
+    money_left = money
+
+    while money_left > 0
+      new_food = prev[money_left]
+
+      food_quantities[new_food.name] += 1
+      money_left -= new_food.price
+    end
+
+    return {
+      total_calories: cache[money],
+      food_quanitities: food_quantities
+    }
   end
 end
