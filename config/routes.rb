@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: "json" },
             constraints: { subdomain: "api" },
             path: "/" do
-    
+    namespace :v1 do
+      resources :food
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
