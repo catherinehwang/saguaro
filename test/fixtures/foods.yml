@@ -1,7 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  name: Green
+  calories: 4
+  price: 12
 
 two:
-  title: MyString
+  name: Blue
+  calories: 2
+  price: 2
+
+three:
+  name: Red
+  calories: 1
+  price: 1
+
+four:
+  name: Yellow
+  calories: 10
+  price: 4
+
+five:
+  name: Gray
+  calories: 1
+  price: 2
