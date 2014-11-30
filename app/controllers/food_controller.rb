@@ -5,11 +5,10 @@ class FoodController < ApplicationController
 
     possible_food = Food.where(source: source).where.not(price: nil).where.not(calories: nil)
 
-    result = determine_ratios(possible_food, money)
+    result = FoodHelper.determine_ratios(possible_food, money)
 
     respond_to do |format|
       format.json { render json: result, status: :ok }
     end
   end
-
 end

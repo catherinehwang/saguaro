@@ -34,4 +34,5 @@ module FoodHelper
       food_quantities: food_quantities
     }
   end
+  module_function :determine_ratios
 end
