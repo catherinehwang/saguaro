@@ -43,3 +43,6 @@ gem "twitter-bootstrap-rails"
 # Use debugger
 gem 'byebug', group: [:development, :test]
 
+# Minitest
+gem 'minitest-rails', group: [:development, :test]
+
