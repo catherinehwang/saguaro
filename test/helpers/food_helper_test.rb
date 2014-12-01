@@ -3,7 +3,7 @@ require 'test_helper'
 class FoodHelperTest < ActionView::TestCase
 
   test "should knapsack properly" do 
-    result = FoodHelper.determine_ratios(Food.all, 15)
+    result = FoodHelper.determine_knapsack(Food.all, 15)
 
     food_quantities = result[:food_quantities]
 

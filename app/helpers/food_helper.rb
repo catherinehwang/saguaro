@@ -1,5 +1,5 @@
 module FoodHelper
-  def determine_ratios(food, money)
+  def determine_knapsack(food, money)
     cache = Array.new(money + 1, 0)
     prev = Array.new(cache.length)
 
@@ -34,5 +34,5 @@ module FoodHelper
       food_quantities: food_quantities
     }
   end
-  module_function :determine_ratios
+  module_function :determine_knapsack
 end
