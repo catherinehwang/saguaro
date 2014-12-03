@@ -18,14 +18,25 @@ module FoodHelper
       end
     end
 
-    food_quantities = Hash.new(0)
+    food_quantities = {}
 
     money_left = money
 
     while money_left > 0
       new_food = prev[money_left]
 
-      food_quantities[new_food.name] += 1
+      entry = food_quantities[new_food.name]
+
+      if entry
+        entry[:price] += new_food.price
+        entry[:quantity] += 1
+      else
+        food_quantities[new_food.name] = {
+          price: new_food.price,
+          quantity: 1
+        }
+      end
+
       money_left -= new_food.price
     end
 
