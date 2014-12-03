@@ -37,7 +37,20 @@
     }
 
     #foodResult {
-        height: 100vh;
-        width: 100%;
+        background: url(image_path("tacobell2.jpg")) no-repeat fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: table;
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.4)
+        }
     }
 }
