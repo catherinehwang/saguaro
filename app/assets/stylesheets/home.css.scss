@@ -7,6 +7,7 @@
         font-family: "Open Sans", sans-serif;
         max-width: 960px;
         margin: 0 auto;
+        z-index: 10;
     }
 
     section.module.parallax {
@@ -15,6 +16,17 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+
+        &:before {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,0.4);
+        }
     }
 
     .parallax-1 {
@@ -29,6 +41,7 @@
         position: relative;
         text-align: center;
         vertical-align: middle;
+        color: white;
     }
 
     .parallax-2 {
