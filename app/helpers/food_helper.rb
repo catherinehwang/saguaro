@@ -46,4 +46,18 @@ module FoodHelper
     }
   end
   module_function :determine_knapsack
+
+  def knapsack_without_replacement(food, money)
+    cache = Array.new(money + 1)
+    cache.each_with_index do |_, i|
+      cache[i] = Array.new(money + 1, 0)
+    end
+
+    prev = Array.new(money + 1)
+    prev.each_with_index do |_, i|
+      prev[i] = Array.new(money + 1)
+    end
+
+  end
+  module_function :knapsack_without_replacement
 end
