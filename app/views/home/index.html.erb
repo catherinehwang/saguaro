@@ -1,6 +1,6 @@
 <div class="home">
-    <div class="hero-unit">
-        <div class="content">
+    <section class="module parallax parallax-1">
+        <div class="container">
             <%= form_tag("/food", id: "foodForm", remote: true, class: "form-horizontal", role: "form") do %>
                 <div class="form-group">
                     <%= label_tag("money", nil, class: "col-sm-2 control-label")%>
@@ -22,10 +22,24 @@
             <% end %>
 
         </div>
-    </div>
+    </section>
 
-    <div id="foodResult">
-    </div>
+    <section class="module content">
+        <div class="container">
+            <p>First stuff</p>
+            <div id="foodResult">
+            </div>
+        </div>
+    </section>
+
+    <section class="module parallax parallax-2">
+    </section>
+
+    <section class="module content">
+        <div class="container">
+            <p>Second stuff</p>
+        </div>
+    </section>
 </div>
 
 <!-- Templates -->
