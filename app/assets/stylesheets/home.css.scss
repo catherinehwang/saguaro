@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home {
-
     .container {
         font-family: "Open Sans", sans-serif;
         max-width: 960px;
@@ -20,6 +19,16 @@
 
     .parallax-1 {
         background: url(image_path("tacobell.jpg")) no-repeat fixed;
+    }
+
+    .hero-unit {
+        top: 50%;
+        transform: translateY(-50%);
+        padding-left: 25%;
+        padding-right: 25%;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
     }
 
     .parallax-2 {
