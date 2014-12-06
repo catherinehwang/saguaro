@@ -34,7 +34,11 @@
 
 <!-- Templates -->
 
-<script id="food-template" type="text/x-handlebars-template">
-    <div id="totalCalories">{{calories}}</div>
+<script id="calories-template" type="text/x-handlebars-template">
+    <div id="totalCalories"><h1>{{calories}} calories</h1></div>
     <div id="foodContent">{{foodQuantities}}</div>
+</script>
+
+<script id="food-template" type="text/x-handlebars-template">
+    <p>Name: {{ name }}, Data: {{ food }}</p>
 </script>

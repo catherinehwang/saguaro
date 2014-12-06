@@ -4,12 +4,22 @@
 
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
-    console.log(data)
     calories = data.total_calories
-    foodQuantities = JSON.stringify(data.food_quantities)
 
-    source = $("#food-template").html()
-    template = Handlebars.compile(source)
-    context = { calories: calories, foodQuantities: foodQuantities }
-    html = template(context)
-    $("#foodResult").html(html))
+    caloriesTemplate = $("#calories-template").html()
+    caloriesCompiledTemplate = Handlebars.compile(caloriesTemplate)
+    caloriesContext = { calories: calories }
+    caloriesHtml = caloriesCompiledTemplate(caloriesContext)
+    $("#foodResult").append(caloriesHtml)
+
+    foodQuantities = data.food_quantities
+    foodTemplate = $("#food-template").html()
+    foodCompiledTemplate = Handlebars.compile(foodTemplate)
+
+    console.log foodQuantities
+    $.each(foodQuantities, (name, food) ->
+      foodContext = { name: name, food: food }
+      foodHtml = foodCompiledTemplate(foodContext)
+      $("#foodResult").append(foodHtml)
+    )
+  )

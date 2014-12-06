@@ -45,4 +45,3 @@ gem 'byebug', group: [:development, :test]
 
 # Minitest
 gem 'minitest-rails', group: [:development, :test]
-
