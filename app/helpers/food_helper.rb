@@ -58,7 +58,7 @@ module FoodHelper
       prev[i] = Array.new(food.length + 1)
     end
 
-    (1...food.length).each do |f|
+    (0..food.length-1).each do |f|
       (1..money).each do |m|
         if food[f].price > m
           cache[m][f] = cache[m][f-1]
@@ -71,7 +71,7 @@ module FoodHelper
       end
     end
 
-    return cache[money][food.length]
+    return cache[money][food.length - 1]
 
   end
   module_function :knapsack_without_replacement
