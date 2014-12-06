@@ -64,7 +64,7 @@ module FoodHelper
       (1..money).each do |m|
         if food[f].price > m
           cache[m][f] = cache[m][f-1]
-          includes_matrix[m][f] = true
+          includes_matrix[m][f] = false
         else
           not_include = cache[m][f-1]
           include = cache[m-food[f].price][f-1] + food[f].calories
