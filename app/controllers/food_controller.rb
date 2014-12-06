@@ -5,7 +5,7 @@ class FoodController < ApplicationController
 
     possible_food = Food.where(source: source).where.not(price: nil).where.not(calories: nil)
 
-    result = FoodHelper.determine_knapsack(possible_food, money)
+    result = FoodHelper.knapsack_without_replacement(possible_food, money)
 
     respond_to do |format|
       format.json { render json: result, status: :ok }
