@@ -21,10 +21,10 @@ class FoodHelperTest < ActionView::TestCase
 
     food_quantities = result[:food_quantities]
 
-    assert_equal(1, food_quantities["Yellow"])
-    assert_equal(1, food_quantities["Red"])
-    assert_equal(1, food_quantities["Blue"])
-    assert_equal(1, food_quantities["Gray"])
+    assert_equal(1, food_quantities["Yellow"][:quantity])
+    assert_equal(1, food_quantities["Red"][:quantity])
+    assert_equal(1, food_quantities["Blue"][:quantity])
+    assert_equal(1, food_quantities["Gray"][:quantity])
     assert_equal(nil, food_quantities["Green"])
   end
 end

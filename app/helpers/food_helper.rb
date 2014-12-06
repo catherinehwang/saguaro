@@ -97,7 +97,11 @@ module FoodHelper
 
     items_taken_status.each_with_index do |status, index|
       if status
-        food_quantities[food[index].name] = 1
+        food_quantities[food[index].name] = {
+          calories: food[index].calories,
+          price: food[index].price,
+          quantity: 1
+        }
       end
     end
 
