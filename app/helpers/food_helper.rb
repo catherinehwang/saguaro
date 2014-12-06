@@ -50,22 +50,22 @@ module FoodHelper
   def knapsack_without_replacement(food, money)
     cache = Array.new(money + 1)
     cache.each_with_index do |_, i|
-      cache[i] = Array.new(money + 1, 0)
+      cache[i] = Array.new(food.length + 1, 0)
     end
 
     prev = Array.new(money + 1)
     prev.each_with_index do |_, i|
-      prev[i] = Array.new(money + 1)
+      prev[i] = Array.new(food.length + 1)
     end
 
-    (1..food.length).each do |f|
+    (1...food.length).each do |f|
       (1..money).each do |m|
         if food[f].price > m
           cache[m][f] = cache[m][f-1]
         else
           cache[m][f] = [
             cache[m][f-1],
-            cache[m-food[f].price, f-1] + f.calories
+            cache[m-food[f].price][f-1] + food[f].calories
           ].max
         end
       end
