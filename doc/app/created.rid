@@ -1,0 +1,10 @@
+Sun, 07 Dec 2014 12:59:35 -0800
+README.rdoc	Fri, 31 Oct 2014 00:00:12 -0700
+app/controllers/api/v1/food_controller.rb	Sun, 30 Nov 2014 12:31:45 -0800
+app/controllers/application_controller.rb	Fri, 31 Oct 2014 00:00:18 -0700
+app/controllers/food_controller.rb	Fri, 05 Dec 2014 23:24:35 -0800
+app/controllers/home_controller.rb	Mon, 24 Nov 2014 19:46:44 -0800
+app/helpers/application_helper.rb	Fri, 31 Oct 2014 00:00:18 -0700
+app/helpers/food_helper.rb	Sat, 06 Dec 2014 00:41:43 -0800
+app/helpers/home_helper.rb	Fri, 31 Oct 2014 23:17:12 -0700
+app/models/food.rb	Mon, 03 Nov 2014 23:56:21 -0800
