@@ -1,5 +1,5 @@
 module FoodHelper
-  def determine_knapsack(food, money)
+  def knapsack_with_replacement(food, money)
     cache = Array.new(money + 1, 0)
     prev = Array.new(cache.length)
 
@@ -45,7 +45,7 @@ module FoodHelper
       food_quantities: food_quantities
     }
   end
-  module_function :determine_knapsack
+  module_function :knapsack_with_replacement
 
   def knapsack_without_replacement(food, money)
     # cache[m][f] : max calories of including foods 1..f with max money m
