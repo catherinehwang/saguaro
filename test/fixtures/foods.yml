@@ -4,23 +4,52 @@ one:
   name: Green
   calories: 4
   price: 12
+  source: box
 
 two:
   name: Blue
   calories: 2
   price: 2
+  source: box
 
 three:
   name: Red
   calories: 1
   price: 1
+  source: box
 
 four:
   name: Yellow
   calories: 10
   price: 4
+  source: box
 
 five:
   name: Gray
   calories: 2
   price: 1
+  source: box
+
+six:
+  name: One
+  calories: 30
+  price: 6
+  source: museum
+
+seven:
+  name: Two
+  calories: 14
+  price: 3
+  source: museum
+
+eight:
+  name: Three
+  calories: 16
+  price: 4
+  source: museum
+
+nine:
+  name: Four
+  calories: 9
+  price: 2
+  source: museum

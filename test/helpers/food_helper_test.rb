@@ -3,7 +3,7 @@ require 'test_helper'
 class FoodHelperTest < ActionView::TestCase
 
   test "should knapsack properly" do
-    result = FoodHelper.knapsack_with_replacement(Food.all, 15)
+    result = FoodHelper.knapsack_with_replacement(Food.where(source: "box"), 15)
 
     food_quantities = result[:food_quantities]
 
@@ -14,7 +14,7 @@ class FoodHelperTest < ActionView::TestCase
   end
 
   test "should knapsack without replacement properly" do
-    result = FoodHelper.knapsack_without_replacement(Food.all, 15)
+    result = FoodHelper.knapsack_without_replacement(Food.where(source: "box"), 15)
 
     assert_equal(15, result[:total_calories])
 
