@@ -19,6 +19,6 @@ $(document).ready ->
     $.each(foodQuantities, (name, food) ->
       foodContext = { name: name, calories: food.calories, price: food.price, quantity: food.quantity }
       foodHtml = foodCompiledTemplate(foodContext)
-      $("#foodResult").append(foodHtml)
+      $("#foodContent").append(foodHtml)
     )
   )
