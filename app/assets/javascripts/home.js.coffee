@@ -17,7 +17,7 @@ $(document).ready ->
     foodCompiledTemplate = Handlebars.compile(foodTemplate)
 
     $.each(foodQuantities, (name, food) ->
-      foodContext = { name: name, calories: food.calories, price: food.price, quanitty: food.quantity }
+      foodContext = { name: name, calories: food.calories, price: food.price, quantity: food.quantity }
       foodHtml = foodCompiledTemplate(foodContext)
       $("#foodResult").append(foodHtml)
     )
