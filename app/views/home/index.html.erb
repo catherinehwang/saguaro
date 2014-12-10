@@ -36,18 +36,22 @@
 
 <script id="calories-template" type="text/x-handlebars-template">
     <div id="totalCalories"><h1>{{calories}} calories</h1></div>
-    <table id="foodContent">
-        <tr>
-            <th>Name</th>
-            <th>Calories</th>
-            <th>Price</th>
-        </tr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Calories</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="foodContent">
+        </tbody>
     </table>
 </script>
 
 <script id="food-template" type="text/x-handlebars-template">
     <tr>
-        <td>{{ name }}</td>
+        <th>{{ name }}</td>
         <td>{{ calories }}</td>
         <td>{{ price }}</td>
     </tr>
