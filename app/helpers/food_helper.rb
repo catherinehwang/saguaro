@@ -60,14 +60,15 @@ module FoodHelper
       includes_matrix[i] = Array.new(food.length + 1)
     end
 
-    (0..food.length-1).each do |f|
+    (1..food.length).each do |f|
+      current_food = food[f-1]
       (1..money).each do |m|
-        if food[f].price > m
+        if current_food.price > m
           cache[m][f] = cache[m][f-1]
           includes_matrix[m][f] = false
         else
           not_include = cache[m][f-1]
-          include = cache[m-food[f].price][f-1] + food[f].calories
+          include = cache[m-current_food.price][f-1] + current_food.calories
 
           if include > not_include
             cache[m][f] = include
@@ -84,29 +85,32 @@ module FoodHelper
     # Now we must determine which items were involved in the optimal solution
 
     items_taken_status = Array.new(food.length, false)
+
     money_left = money
 
-    (0..food.length).each do |f|
+    food.length.downto(1).each do |f|
       if includes_matrix[money_left][f]
         items_taken_status[f] = true
-        money_left -= food[f].price
+        money_left -= food[f-1].price
       end
     end
 
     food_quantities = {}
 
+
     items_taken_status.each_with_index do |status, index|
       if status
-        food_quantities[food[index].name] = {
-          calories: food[index].calories,
-          price: food[index].price,
+        current_food = food[index-1]
+        food_quantities[current_food.name] = {
+          calories: current_food.calories,
+          price: current_food.price,
           quantity: 1
         }
       end
     end
 
     return {
-      total_calories: cache[money][food.length - 1],
+      total_calories: cache[money][food.length],
       food_quantities: food_quantities
     }
 

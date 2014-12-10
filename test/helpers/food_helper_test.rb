@@ -26,11 +26,9 @@ class FoodHelperTest < ActionView::TestCase
   test "should knapsack without replacement properly" do
     result = FoodHelper.knapsack_without_replacement(Food.where(source: "box"), 15)
 
-    assert_equal(15, result[:total_calories])
-
-
     food_quantities = result[:food_quantities]
 
+    assert_equal(15, result[:total_calories])
     assert_equal(1, food_quantities["Yellow"][:quantity])
     assert_equal(1, food_quantities["Red"][:quantity])
     assert_equal(1, food_quantities["Blue"][:quantity])
@@ -45,8 +43,8 @@ class FoodHelperTest < ActionView::TestCase
 
     assert_equal(46, result[:total_calories])
     assert_equal(1, food_quantities["One"][:quantity])
-    assert_equal(nil, food_quantities["Two"][:quantity])
+    assert_equal(nil, food_quantities["Two"])
     assert_equal(1, food_quantities["Three"][:quantity])
-    assert_equal(nil, food_quantities["Four"][:quantity])
+    assert_equal(nil, food_quantities["Four"])
   end
 end
