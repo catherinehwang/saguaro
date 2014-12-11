@@ -23,4 +23,8 @@ $(document).ready ->
       foodHtml = foodCompiledTemplate(foodContext)
       $("#foodContent").append(foodHtml)
     )
+
+    $("html, body").animate(
+      { scrollTop: $("#foodResult").offset().top }, 2000
+    )
   )
