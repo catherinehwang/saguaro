@@ -9,7 +9,7 @@ Rails.application.routes.draw do
             constraints: { subdomain: "api" },
             path: "/" do
     namespace :v1 do
-      resources :food
+      resources :food, only: [ :index, :show ]
     end
   end
 
