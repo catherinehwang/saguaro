@@ -10,7 +10,7 @@ $(document).ready ->
     caloriesCompiledTemplate = Handlebars.compile(caloriesTemplate)
     caloriesContext = { calories: calories }
     caloriesHtml = caloriesCompiledTemplate(caloriesContext)
-    $("#foodResult").append(caloriesHtml)
+    $("#foodResult").html(caloriesHtml)
 
     foodQuantities = data.food_quantities
     foodTemplate = $("#food-template").html()
