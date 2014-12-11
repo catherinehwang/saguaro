@@ -11,8 +11,17 @@ class Api::V1::FoodController < ApplicationController
     render json: food
   end
 
-  # Whitelist params
-  def food_params
-    params[:food]
+  # GET /meal
+  def meal
+    money = params[:money].to_f
+    source = params[:source]
+
+    possible_food = Food.where(source: source).where.not(price: nil).where.not(calories: nil)
+
+    result = FoodHelper.knapsack_without_replacement(possible_food, money)
+
+    render json: result
+
   end
+
 end

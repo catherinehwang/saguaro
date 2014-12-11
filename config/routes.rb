@@ -10,6 +10,7 @@ Rails.application.routes.draw do
             path: "/" do
     namespace :v1 do
       resources :food, only: [ :index, :show ]
+      get 'meal' => 'food#meal'
     end
   end
 
