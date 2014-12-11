@@ -21,3 +21,6 @@
 
 # Ignore vim
 *.swp
+
+# Ignore yardoc
+/.yardoc/

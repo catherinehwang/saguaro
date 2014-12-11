@@ -12,6 +12,12 @@ class Api::V1::FoodController < ApplicationController
   end
 
   # GET /meal
+  # 
+  # @param [Integer] money Amount of money in cents
+  #
+  # @param [String] source Name of the restaurant
+  #
+  # @return [Hash]
   def meal
     money = params[:money].to_f
     source = params[:source]
