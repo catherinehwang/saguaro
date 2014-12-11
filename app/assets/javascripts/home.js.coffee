@@ -4,8 +4,6 @@
 
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
-    $(".parallax-2").show()
-
     calories = data.total_calories
 
     caloriesTemplate = $("#calories-template").html()
