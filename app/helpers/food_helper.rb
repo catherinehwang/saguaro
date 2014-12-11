@@ -103,7 +103,7 @@ module FoodHelper
         current_food = food[index-1]
         food_quantities[current_food.name] = {
           calories: current_food.calories,
-          price: current_food.price,
+          price: "$%.2f" % (current_food.price.to_f / 100),
           quantity: 1
         }
       end

@@ -25,6 +25,6 @@ $(document).ready ->
     )
 
     $("html, body").animate(
-      { scrollTop: $("#foodResult").offset().top }, 2000
+      { scrollTop: $("#foodResult").offset().top }, 500
     )
   )
