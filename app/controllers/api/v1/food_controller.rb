@@ -1,14 +1,14 @@
-class API::V1::FoodController < ApplicationController
-  before_action :set_food, only: [ :show, :edit, :update, :destroy ]
-
+class Api::V1::FoodController < ApplicationController
   # GET /foods
   def index
-    @foods = Food.all
+    foods = Food.all
+    render json: foods
   end
 
   # GET /foods/1
   def show
-    @food = Food.find(params[:id])
+    food = Food.find(params[:id])
+    render json: food
   end
 
   # Whitelist params
