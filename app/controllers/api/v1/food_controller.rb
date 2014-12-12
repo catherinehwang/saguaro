@@ -1,14 +1,14 @@
 class Api::V1::FoodController < ApplicationController
-  # GET /foods
+  # GET /food
   def index
-    foods = Food.all
-    render json: foods
+    @food = Food.all
+    render 'index'
   end
 
-  # GET /foods/1
+  # GET /food/1
   def show
-    food = Food.find(params[:id])
-    render json: food
+    @food = Food.find(params[:id])
+    render '_show'
   end
 
   # GET /meal
