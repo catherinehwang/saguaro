@@ -1,1 +1,1 @@
-json.food @food, partial: 'api/v1/food/show', as: "food"
+json.array! @food, partial: 'api/v1/food/food', as: "food"

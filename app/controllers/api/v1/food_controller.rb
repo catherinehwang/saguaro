@@ -2,13 +2,11 @@ class Api::V1::FoodController < ApplicationController
   # GET /food
   def index
     @food = Food.all
-    render 'index'
   end
 
   # GET /food/1
   def show
     @food = Food.find(params[:id])
-    render '_show'
   end
 
   # GET /meal
