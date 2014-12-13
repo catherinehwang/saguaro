@@ -1,5 +1,5 @@
 class FoodController < ApplicationController
-  def calculate_food
+  def meal
     money = (params[:money].to_f * 100).to_i
     source = params[:source]
 

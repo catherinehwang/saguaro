@@ -1,7 +1,7 @@
 <div class="home">
     <section class="module parallax parallax-1">
         <div class="container hero-unit">
-            <%= form_tag(food_path, id: "foodForm", remote: true, class: "form-horizontal", role: "form") do %>
+            <%= form_tag(meal_path, id: "foodForm", method: "get", remote: true, class: "form-horizontal", role: "form") do %>
                 <div class="form-group">
                     <div class="input-group col-sm-12">
                         <div class="input-group-addon">$</div>
