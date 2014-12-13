@@ -4,7 +4,7 @@
 
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
-    calories = data.total_calories
+    calories = data.calories
 
     caloriesTemplate = $("#calories-template").html()
     caloriesCompiledTemplate = Handlebars.compile(caloriesTemplate)
@@ -12,12 +12,12 @@ $(document).ready ->
     caloriesHtml = caloriesCompiledTemplate(caloriesContext)
     $("#foodResult").html(caloriesHtml)
 
-    foodQuantities = data.food_quantities
+    foodList = data.food
     foodTemplate = $("#food-template").html()
     foodCompiledTemplate = Handlebars.compile(foodTemplate)
 
-    $.each(foodQuantities, (name, food) ->
-      foodContext = { name: name, calories: food.calories, price: food.price, quantity: food.quantity }
+    $.each(foodList, (index, food) ->
+      foodContext = { name: food.name, calories: food.calories, price: food.price }
       foodHtml = foodCompiledTemplate(foodContext)
       $("#foodContent").append(foodHtml)
     )

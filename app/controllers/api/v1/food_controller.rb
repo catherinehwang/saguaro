@@ -9,7 +9,7 @@ class Api::V1::FoodController < ApplicationController
     @food = Food.find(params[:id])
   end
 
-  # GET /meal
+  # GET /v1/meal
   # Determines the optimal meal given some money as a constraint.
   #
   # @param [Integer] money Amount of money in cents
