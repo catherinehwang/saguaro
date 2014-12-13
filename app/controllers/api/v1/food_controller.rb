@@ -10,22 +10,20 @@ class Api::V1::FoodController < ApplicationController
   end
 
   # GET /meal
-  # 
+  # Determines the optimal meal given some money as a constraint.
+  #
   # @param [Integer] money Amount of money in cents
   #
   # @param [String] source Name of the restaurant
   #
-  # @return [Hash]
+  # @return [Array] an array of food
   def meal
     money = params[:money].to_f
     source = params[:source]
 
     possible_food = Food.where(source: source).where.not(price: nil).where.not(calories: nil)
 
-    result = FoodHelper.knapsack_without_replacement(possible_food, money)
-
-    render json: result
-
+    @food = FoodHelper.knapsack_without_replacement(possible_food, money)
   end
 
 end

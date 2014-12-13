@@ -47,6 +47,7 @@ module FoodHelper
   end
   module_function :knapsack_with_replacement
 
+  # Returns a list of [Food].
   def knapsack_without_replacement(food, money)
     # cache[m][f] : max calories of including foods 1..f with max money m
     cache = Array.new(money + 1)
@@ -95,25 +96,15 @@ module FoodHelper
       end
     end
 
-    food_quantities = {}
-
-
+    food_result = []
     items_taken_status.each_with_index do |status, index|
       if status
         current_food = food[index-1]
-        food_quantities[current_food.name] = {
-          calories: current_food.calories,
-          price: "$%.2f" % (current_food.price.to_f / 100),
-          quantity: 1
-        }
+        food_result.push(current_food)
       end
     end
 
-    return {
-      total_calories: cache[money][food.length],
-      food_quantities: food_quantities
-    }
-
+    return food_result
   end
   module_function :knapsack_without_replacement
 end
