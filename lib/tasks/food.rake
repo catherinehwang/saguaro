@@ -44,7 +44,7 @@ namespace :taco_bell do
     end
 
     desc "Add price information"
-    task :prices do
+    task :prices => :environment do
       price_page = "http://www.fastfoodmenuprices.com/taco-bell-prices/"
 
       doc = Nokogiri::HTML(open(price_page))
