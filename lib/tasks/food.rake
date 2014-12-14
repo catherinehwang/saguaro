@@ -52,7 +52,7 @@ namespace :taco_bell do
       rows = doc.css("#tablepress-3").css("tbody").css("tr")
 
       food_rows = rows.select do |item|
-        item.children.count == 3
+        item.css(".column-3").text.present?
       end
 
       non_matches = File.new("log/no_prices.log", "w")
@@ -86,10 +86,10 @@ namespace :taco_bell do
           next
         end
 
+
         price_string = item.css(".column-3").text
 
         next if price_string.blank?
-
         food.price = price_string.gsub(/\D/,'').to_i
         food.save
       end
