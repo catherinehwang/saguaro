@@ -86,7 +86,11 @@ namespace :taco_bell do
           next
         end
 
-        food.price = item.css(".column-3").text.gsub(/\D/,'').to_i
+        price_string = item.css(".column-3").text
+
+        next if price_string.blank?
+
+        food.price = price_string.gsub(/\D/,'').to_i
         food.save
       end
     end
