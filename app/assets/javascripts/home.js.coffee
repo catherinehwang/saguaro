@@ -17,7 +17,8 @@ $(document).ready ->
     foodCompiledTemplate = Handlebars.compile(foodTemplate)
 
     $.each(foodList, (index, food) ->
-      foodContext = { name: food.name, calories: food.calories, price: food.price }
+      price = "$#{(food.price / 100).toFixed(2)}"
+      foodContext = { name: food.name, calories: food.calories, price: price }
       foodHtml = foodCompiledTemplate(foodContext)
       $("#foodContent").append(foodHtml)
     )
