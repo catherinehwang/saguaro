@@ -1,5 +1,6 @@
 class Api::V1::FoodController < ApplicationController
   # GET /food
+  # Get a list of all the food.
   def index
     @food = Food.all
   end
