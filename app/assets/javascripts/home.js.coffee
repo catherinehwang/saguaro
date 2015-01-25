@@ -5,10 +5,11 @@
 $(document).ready ->
   $("#foodForm").on("ajax:success", (e, data, status, xhr) ->
     calories = data.calories
+    totalPrice = data.total_price
 
     caloriesTemplate = $("#calories-template").html()
     caloriesCompiledTemplate = Handlebars.compile(caloriesTemplate)
-    caloriesContext = { calories: calories }
+    caloriesContext = { calories: calories, price: totalPrice }
     caloriesHtml = caloriesCompiledTemplate(caloriesContext)
     $("#foodResult").html(caloriesHtml)
 

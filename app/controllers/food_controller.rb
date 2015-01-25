@@ -16,5 +16,6 @@ class FoodController < ApplicationController
 
     @food = FoodHelper.knapsack_without_replacement(possible_food, money)
     @calories = @food.map(&:calories).reduce(:+)
+    @total_calories = @food.map(&:price).reduce(:+)
   end
 end
