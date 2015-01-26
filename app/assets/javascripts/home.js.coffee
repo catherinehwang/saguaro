@@ -9,6 +9,7 @@ $(document).ready ->
 
     caloriesTemplate = $("#calories-template").html()
     caloriesCompiledTemplate = Handlebars.compile(caloriesTemplate)
+    totalPrice = "$#{(totalPrice / 100).toFixed(2)}"
     caloriesContext = { calories: calories, price: totalPrice }
     caloriesHtml = caloriesCompiledTemplate(caloriesContext)
     $("#foodResult").html(caloriesHtml)
